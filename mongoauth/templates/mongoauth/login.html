@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html class="page">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Please log in</h1>
+        <form action="{% url 'mongoauth:login' %}" method="POST">
+            {% csrf_token %}
+            <input type="email" name="email"></input>
+            <br /><br />
+            <input type="password" name="password"></input>
+            <br /><br />
+            <button type="submit">Login</button>
+        </form>
+    </body>
+<html>
