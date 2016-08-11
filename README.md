@@ -67,7 +67,7 @@ $ workon demo_mongo
 ##### Fetching and Prepping the Project
 * Clone the project
 ```sh
-$ git clone "<git_repository_url>"
+$ git clone "https://github.com/eshandas/django_project_template_mongo.git"
 ```
 
 * Rename project directory for consistency and cd
