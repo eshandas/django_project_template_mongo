@@ -1,5 +1,11 @@
 # Django Project Template Using SQL and MongoDB
 
+### About
+
+The project is an empty template which uses MongoDB along with SQL as datastores. The app "mongoauth" implements MongoDB for creation and management of users, whereas using SQL is Django's default behaviour.
+
+For more info, see wiki.
+
 ### Version 0.0.1
 
 ### Tech Stack
