@@ -1,7 +1,7 @@
 from main.settings.base import *
 
 from mongoengine import connect
-connect('connection_name', username='admin', password='******')
+connect('testDB', username='admin', password='charli3!')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -12,15 +12,31 @@ ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS += (
+    'debug_toolbar_mongo',
     'debug_toolbar',
     'debug_panel',
     'django_extensions',
 )
 
+# Mentioning all the toolbars explicitly as debug_toolbar_mongo disables all of them
+# Got the path lists from http://django-debug-toolbar.readthedocs.io/en/stable/panels.html
+DEBUG_TOOLBAR_PANELS = (
+    'debug_toolbar_mongo.panel.MongoDebugPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+    'debug_toolbar.panels.request.RequestPanel',
+    'debug_toolbar.panels.templates.TemplatesPanel',
+    'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    'debug_toolbar.panels.cache.CachePanel',
+    'debug_toolbar.panels.signals.SignalsPanel',
+    'debug_toolbar.panels.logging.LoggingPanel',
+    'debug_toolbar.panels.redirects.RedirectsPanel',
+)
 
 MIDDLEWARE_CLASSES += (
     'debug_panel.middleware.DebugPanelMiddleware',
 )
+
+DEBUG_TOOLBAR_MONGO_STACKTRACES = True
 
 
 # Haystack connection

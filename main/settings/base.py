@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.realpath(os.path.dirname(__file__) + "/.."))
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,7 +40,8 @@ INSTALLED_APPS = (
     'django_user_agents',
     'djcelery',
     'django.contrib.humanize',
-    'errorlog',
+    'posts',
+    # 'errorlog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +57,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'errorlog.middleware.errormiddleware.ErrorMiddleware',
+    # 'errorlog.middleware.errormiddleware.ErrorMiddleware',
+    # 'django_user_agents.middleware.UserAgentMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (

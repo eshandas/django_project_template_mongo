@@ -1,4 +1,4 @@
-# Django Project Template Using SQL and MongoDB
+# An Admin Panel and DB Manager for Django with MongoDB
 
 ### About
 

@@ -1,0 +1,14 @@
+{% extends 'site_templates/site_master.html' %}
+{% load staticfiles %}
+
+{% block header_block %}
+    <title>Create Post</title>
+{% endblock %}
+
+{% block body_block %}
+    <h3>All posts</h3>
+    {% for post in posts %}
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+    {% endfor %}
+{% endblock %}
