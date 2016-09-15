@@ -10,7 +10,7 @@ For more info, see wiki.
 
 ### Tech Stack
 
-Following is the tech stack being used for demo_mongo project:
+Following is the tech stack being used for main project:
 
 * [Django 1.8] - The core Web Framework
 * [Django Rest Framework 3.3.3] - For creating REST APIs
@@ -60,12 +60,12 @@ $ source ~/.bashrc
 
 * Create new virtual environment
 ```sh
-$ mkvirtualenv demo_mongo
+$ mkvirtualenv main
 ```
 
 * Activate the virtual environment
 ```sh
-$ workon demo_mongo
+$ workon main
 ```
 
 > Gunicorn will be installed while installing requirements
@@ -78,8 +78,8 @@ $ git clone "https://github.com/eshandas/django_project_template_mongo.git"
 
 * Rename project directory for consistency and cd
 ```sh
-$ mv demo_mongo-api/ demo_mongo
-$ cd demo_mongo
+$ mv main-api/ main
+$ cd main
 ```
 
 > Make sure that correct setting file is pointed in **manage.py** and **wsgi.py** files
@@ -227,16 +227,16 @@ $ pip install -U celery[redis]
 
 * Add tasks file in /utils/ for e.g /utils/email_tasks.py. This holds all the async tasks to be handed to Celery for execution
 
-* Make sure a /demo_mongo/celery.py file is present. This holds all the project level configuration for Celery. The settings are
+* Make sure a /main/celery.py file is present. This holds all the project level configuration for Celery. The settings are
 ```
 from __future__ import absolute_import
 import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'demo_mongo.settings.stage')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings.stage')
 
-app = Celery('demo_mongo',
+app = Celery('main',
              broker='redis://localhost:6379/0',
              backend='redis://localhost:6379/0',
              include=['utils.indexing_tasks', 'utils.email_tasks'])
@@ -284,11 +284,11 @@ $ python manage.py migrate
 
 * Run Celery server (inside virtualenv) and it will start listening for new tasks
 ```sh
-$ celery -A demo_mongo worker -l info
+$ celery -A main worker -l info
 ```
 
 * Run Celery beat (inside virtualenv) and it will start scheduling tasks
 ```sh
-$ celery -A demo_mongo beat -l info
+$ celery -A main beat -l info
 ```
 

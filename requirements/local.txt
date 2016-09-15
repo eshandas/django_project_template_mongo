@@ -5,6 +5,7 @@ django-cors-headers==1.1.0
 django-debug-panel==0.8.3
 django-debug-toolbar==1.4
 django-rest-framework-mongoengine==3.3.0
+django-extensions==1.7.4
 django-haystack==2.4.1
 django-smtp-ssl==1.0
 django-user-agents==0.3.0

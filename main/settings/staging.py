@@ -1,4 +1,4 @@
-from demo_mongo.settings.base import *
+from main.settings.base import *
 
 from mongoengine import connect
 connect('connection_name', username='admin', password='******')

@@ -1,4 +1,4 @@
-from demo_mongo.settings.base import *
+from main.settings.base import *
 import elasticsearch
 
 from mongoengine import connect

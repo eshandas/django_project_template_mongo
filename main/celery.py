@@ -5,9 +5,9 @@ import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'demo_mongo.settings.production')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings.local')
 
-app = Celery('demo_mongo',
+app = Celery('main',
              broker='redis://localhost:6379/0',
              backend='redis://localhost:6379/0',
              include=['utils.email_tasks'])
