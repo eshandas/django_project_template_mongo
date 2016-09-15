@@ -26,9 +26,9 @@ SECRET_KEY = '*po#e#9e277)@@b$dnc=ai1w#!49-g_%v^xa3!6twpr!rwj$g('
 # Application definition
 
 INSTALLED_APPS = (
-    'mongoauth',
     # 'django.contrib.admin',
     # 'django.contrib.auth',
+    'mongoauth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
