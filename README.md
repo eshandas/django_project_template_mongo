@@ -4,6 +4,8 @@
 
 A Django project template for Mongo Engine. Following is the setup instruction for local setup.
 
+> NOTE: Though Mongo is the primary datastore, the project still uses SQL for some features: User Management, Session Management, Celery, etc. However, these can be completely overridden.
+
 ### Version 0.1
 
 ### Tech Stack
@@ -149,17 +151,40 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-##### Setting up Haystack and Elastic Search
+### Setting up Haystack and Elastic Search
 Not required for now. Check _docs in case needed.
 
-##### Setting up Celery
+### Setting up Celery
 Not required for now. Check _docs in case needed.
 
-##### Setting up Gunicorn
+### Setting up Gunicorn
 Not required for now. Check _docs in case needed.
 
-##### Setting up Nginx
+### Setting up Nginx
 Not required for now. Check _docs in case needed.
 
-##### Setup Supervisord
+### Setup Supervisord
 Not required for now. Check _docs in case needed.
+
+### Project Configuration
+
+##### Project Settings
+* All the common settings live in main/settings/base.py
+* Environment specific settings live in main/settings folder. For e.g., for dev env, we have dev.py. Each setting file has a corresponding wsgi file in main/wsgis folder. The wsgi file points to the corresponding settings file.
+
+##### Static Files
+Static files are configured to live in site_static/
+
+##### Requirements
+There are two requirement files: For local, install from requirements/local.txt. For any other hosted environment, install from requirements/server.txt
+
+### Recommended tips
+
+#### Sublime Text Editor
+Use Sublime 3 for writing Python/Django code.
+
+##### Installation
+Install it from: http://docs.sublimetext.info/en/latest/getting_started/install.html
+
+##### Setup
+Follow this tutorial to configure Sublime for Python and Django: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
