@@ -51,6 +51,10 @@ HAYSTACK_CONNECTIONS = {
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+# In order to turn db off, use:
+#     'default': {
+#         'ENGINE': 'django.db.backends.dummy'
+#     }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -73,3 +77,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_PORT = 465
 # EMAIL_HOST_USER = AWS_ACCESS_KEY_ID
 # EMAIL_HOST_PASSWORD = AWS_SECRET_ACCESS_KEY
+EMAIL_FROM = 'eshan@defraglabs.co'

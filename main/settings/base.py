@@ -36,12 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_mongoengine',
+    'rest_framework_swagger',
     'corsheaders',
     'django_user_agents',
     'djcelery',
     'django.contrib.humanize',
     'posts',
-    # 'errorlog',
+    'logger',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,15 +58,22 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    # 'errorlog.middleware.errormiddleware.ErrorMiddleware',
-    # 'django_user_agents.middleware.UserAgentMiddleware',
+    'logger.middleware.errormiddleware.ErrorMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
     'mongoauth.backends.MongoAuthBackend',
 )
 
+# Application versioning
+VERSION = {
+    'v1': '0.1',
+}
+
 ROOT_URLCONF = 'main.urls'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
 # Template paths
 # Absolute path to the templates directory
@@ -90,7 +98,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'main.wsgi.application'
+# WSGI_APPLICATION = 'main.wsgi.application'
 
 
 # Internationalization

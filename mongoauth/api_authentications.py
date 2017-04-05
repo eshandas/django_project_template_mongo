@@ -1,6 +1,6 @@
 from django.contrib.sessions.backends.db import SessionStore
 
-from errorlog.middleware.errormiddleware import log_session_error
+from logger.middleware.errormiddleware import log_session_error
 
 from .mongomodels import User
 from django.contrib.auth.models import AnonymousUser

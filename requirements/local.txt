@@ -1,9 +1,13 @@
+boto==2.43.0
 celery==3.1.23
 Django==1.8
 django-celery==3.1.17
 django-cors-headers==1.1.0
+#--- ONLY FOR LOCAL
 django-debug-panel==0.8.3
+#--- ONLY FOR LOCAL
 django-debug-toolbar==1.4
+#--- ONLY FOR LOCAL
 django-debug-toolbar-mongo==0.1.10
 django-rest-framework-mongoengine==3.3.0
 django-extensions==1.7.4
@@ -11,17 +15,22 @@ django-haystack==2.4.1
 django-smtp-ssl==1.0
 django-user-agents==0.3.0
 djangorestframework==3.3.3
+django-rest-swagger==2.1.1
+#--- ONLY FOR LOCAL
+Fabric==1.12.0
 gunicorn==19.4.5
+#--- ONLY FOR LOCAL 
 ipdb==0.9.3
 mongoengine==0.10.6
 pathlib2==2.1.0
 Pillow==3.2.0
-# psycopg2==2.6.1
 ptyprocess==0.5.1
 pymongo==3.2.2
 pytz==2016.4
 redis==2.10.5
 requests==2.10.0
+#--- ONLY FOR LOCAL
+Sphinx==1.5.3
 supervisor==3.3.0
 ua-parser==0.7.1
 user-agents==1.0.1

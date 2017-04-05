@@ -4,7 +4,7 @@
 
 A Django project template for Mongo Engine. Following is the setup instruction for local setup.
 
-> NOTE: Though Mongo is the primary datastore, the project still uses SQL for some features: User Management, Session Management, Celery, etc. However, these can be completely overridden.
+> NOTE: Though Mongo is the primary datastore, the project still uses SQL for some features: Session Management, Celery, etc. However, these can be completely overridden.
 
 ### Version 0.1
 
@@ -177,6 +177,18 @@ Static files are configured to live in site_static/
 
 ##### Requirements
 There are two requirement files: For local, install from requirements/local.txt. For any other hosted environment, install from requirements/server.txt
+
+### Documentation
+The project uses Sphinx for documentation. It can automatically create documentation from Doc Strings.
+
+The project also uses Django Rest Swagger for API documentation. It picks up documentation from Doc Strings as well.
+
+* Add doc string in __init__.py files
+* Document your APIs by adding doc strings in API classes
+* Add help_text in models. This will be automatically picked up by Sphinx and will be documented.
+
+### Unit Tests
+The project uses Mongomock and for mongo related unit tests and Django Rest Framework for API unit tests.
 
 ### Recommended tips
 

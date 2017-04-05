@@ -1,10 +1,10 @@
-from mongoengine import Document
+from mongoengine import DynamicDocument
 from mongoengine import fields
 
 import datetime
 
 
-class User(Document):
+class User(DynamicDocument):
     email = fields.StringField(required=True, max_length=50, unique=True)
     password = fields.StringField(required=True)
     first_name = fields.StringField(required=True)
